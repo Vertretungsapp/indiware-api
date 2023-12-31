@@ -1,2 +1,3 @@
-# indiware-parser
-👾 A fully-typed parser for Indiware data, used by Vertretungsapp
+# IndiwareAPI TS wrapper
+
+👾 A fully-typed wrapper for the Indiware API, used by Vertretungsapp
