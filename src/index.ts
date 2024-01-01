@@ -1,3 +1,4 @@
+import { AxiosRequestConfig } from 'axios';
 import { log } from 'console';
 import { XMLParser } from 'fast-xml-parser';
 import { Credentials, IndiwareAPI } from './api';
@@ -47,6 +48,12 @@ type BootstrapOptions = {
 	 * This can be changed later.
 	 */
 	password: string;
+
+	/**
+	 * The options to pass to axios.
+	 * Can be used to set a proxy or something else.
+	 */
+	axiosOptions?: AxiosRequestConfig;
 };
 
 /**
@@ -60,11 +67,15 @@ export default class IndiwareAPIWrapper {
 	 * @param {BootstrapOptions} options The options to bootstrap the API with.
 	 */
 	constructor(private options: BootstrapOptions) {
-		this.api = new IndiwareAPI(options.uri, {
-			schoolnumber: options.schoolnumber,
-			username: options.username,
-			password: options.password,
-		});
+		this.api = new IndiwareAPI(
+			options.uri,
+			{
+				schoolnumber: options.schoolnumber,
+				username: options.username,
+				password: options.password,
+			},
+			options.axiosOptions,
+		);
 	}
 
 	private parseXML(xml: string) {

@@ -1,3 +1,4 @@
+import axios, { AxiosRequestConfig } from 'axios';
 import { SchoolnumberUnallowedCharsError, SchoolnumberWrongLengthError } from '../errors';
 
 export interface Credentials {
@@ -10,6 +11,7 @@ export class IndiwareAPI {
 	constructor(
 		private uri: string,
 		private credentials: Credentials,
+		private axiosOptions?: AxiosRequestConfig,
 	) {
 		if (credentials.schoolnumber.length !== 8) {
 			throw new SchoolnumberWrongLengthError();
@@ -26,12 +28,12 @@ export class IndiwareAPI {
 	}
 
 	makeRequest(endpoint: string): Promise<Response> {
-		return fetch(this.createRequestURL(endpoint), {
-			headers: {
-				Authorization: `Basic ${btoa(
-					`${this.credentials.username}:${this.credentials.password}`,
-				)}`,
+		return axios.get(this.createRequestURL(endpoint), {
+			auth: {
+				username: this.credentials.username,
+				password: this.credentials.password,
 			},
+			...this.axiosOptions,
 		});
 	}
 }
