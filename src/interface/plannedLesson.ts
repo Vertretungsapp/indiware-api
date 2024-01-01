@@ -13,7 +13,7 @@ export interface PlannedLesson {
 	order: number;
 	subject: Changeable<string>;
 
-	schoolClass: number;
+	schoolClass: string;
 	room: Changeable<string>;
 	teacher: Changeable<string>;
 

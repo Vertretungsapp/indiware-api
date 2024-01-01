@@ -27,7 +27,7 @@ export class IndiwareAPI {
 		return `${uri}/${this.credentials.schoolnumber}${endpoint}`;
 	}
 
-	makeRequest(endpoint: string): Promise<Response> {
+	makeRequest(endpoint: string) {
 		return axios.get(this.createRequestURL(endpoint), {
 			auth: {
 				username: this.credentials.username,

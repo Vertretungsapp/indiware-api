@@ -1,3 +1,4 @@
+import { parse as parseDate } from 'date-fns';
 import { Changeable } from '../interface/generic/changeable';
 import { PlannedLesson } from '../interface/plannedLesson';
 import { IndiwareParser } from './generic/parser';
@@ -21,12 +22,12 @@ export class PlannedLessonParser implements IndiwareParser<PlannedLesson> {
 		return {
 			id: xml.Nr,
 			order: xml.St,
-			startTime: new Date(xml.Beginn),
-			endTime: new Date(xml.Ende),
+			startTime: parseDate(xml.Beginn, 'HH:mm', new Date()),
+			endTime: parseDate(xml.Ende, 'HH:mm', new Date()),
 			subject: parseChangeable(xml.Fa),
 			teacher: parseChangeable(xml.Le),
 			room: parseChangeable(xml.Ra),
-			schoolClass: xml.Kl,
+			schoolClass: xml.schoolClass || '???',
 			info: xml.If || null,
 		};
 	}

@@ -94,9 +94,8 @@ export default class IndiwareAPIWrapper {
 	private async requestSubstitutionPlan(endpoint: string): Promise<SubstitutionPlan> {
 		const res = await this.api.makeRequest(endpoint);
 		if (res.status === 404) throw new PlanNotFoundError(endpoint);
-		if (!res.ok) throw new RequestFailedError(res.status, res.statusText);
-		const body = await res.text();
-		return new SubstitutionPlanParser().parse(this.parseXML(body));
+		if (res.status !== 200) throw new RequestFailedError(res.status, res.statusText);
+		return new SubstitutionPlanParser().parse(this.parseXML(res.data));
 	}
 
 	async getNewestSubstitutionPlan(): Promise<SubstitutionPlan> {

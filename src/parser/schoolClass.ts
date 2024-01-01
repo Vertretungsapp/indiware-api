@@ -29,7 +29,12 @@ export class SchoolClassParser implements IndiwareParser<SchoolClass> {
 		);
 
 		const plannedLessons: PlannedLesson[] = xml.Pl
-			? xml.Pl.Std.map((plannedLesson: any) => new PlannedLessonParser().parse(plannedLesson))
+			? xml.Pl.Std.map((plannedLesson: any) =>
+					new PlannedLessonParser().parse({
+						schoolClass: xml.Kurz,
+						...plannedLesson,
+					}),
+				)
 			: [];
 
 		return {
