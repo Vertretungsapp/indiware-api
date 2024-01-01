@@ -3,9 +3,9 @@
  * It is used to represent the normal timetable.
  */
 export interface Lesson {
-  id: number
-  name: string
-  subject: string
-  group: string | null
-  teacher: number
+	id: number;
+	name: string;
+	subject: string;
+	group: string | null;
+	teacher: number;
 }

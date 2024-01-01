@@ -1,12 +1,11 @@
-import { Course } from '../interface/course'
-import { Lesson } from '../interface/lesson'
-import { IndiwareParser } from './generic/parser'
+import { Course } from '../interface/course';
+import { IndiwareParser } from './generic/parser';
 
 export class CourseParser implements IndiwareParser<Course> {
-  parse(xml: any): Course {
-    return {
-      subject: xml.KKz['#text'],
-      teacherName: xml.UeNr['@_KLe'],
-    }
-  }
+	parse(xml: any): Course {
+		return {
+			subject: xml.KKz['#text'],
+			teacher: xml.UeNr['@_KLe'],
+		};
+	}
 }

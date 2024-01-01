@@ -3,6 +3,6 @@
  * This is a indiware thing, if you need, you can merge those with the other lessons.
  */
 export interface Course {
-  subject: string
-  teacherName: number
+	subject: string;
+	teacher: number;
 }

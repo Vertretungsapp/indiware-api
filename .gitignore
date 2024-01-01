@@ -131,3 +131,6 @@ dist
 
 # TypeScript build output
 lib/
+
+src/parser/example.xml
+src/parser/example.json

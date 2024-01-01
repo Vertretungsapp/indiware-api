@@ -1,34 +1,37 @@
 {
-  "name": "indiware-api",
-  "version": "0.0.0",
-  "description": "A fully-typed wrapper for the Indiware API, used by Vertretungsapp",
-  "author": "Vertretungsapp Development",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "prepublish": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Vertretungsapp/indiware-api.git"
-  },
-  "keywords": [
-    "indiware",
-    "stundenplan24"
-  ],
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/Vertretungsapp/indiware-api/issues"
-  },
-  "homepage": "https://github.com/Vertretungsapp/indiware-api#readme",
-  "devDependencies": {
-    "@types/node": "^20.10.6",
-    "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "date-fns": "^3.0.6",
-    "fast-xml-parser": "^4.3.2"
-  }
+	"name": "indiware-api",
+	"version": "0.0.0",
+	"description": "A fully-typed wrapper for the Indiware API, used by Vertretungsapp",
+	"author": "Vertretungsapp Development",
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"prepublish": "tsc",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"format": "prettier --write ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Vertretungsapp/indiware-api.git"
+	},
+	"keywords": [
+		"indiware",
+		"stundenplan24"
+	],
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/Vertretungsapp/indiware-api/issues"
+	},
+	"homepage": "https://github.com/Vertretungsapp/indiware-api#readme",
+	"devDependencies": {
+		"@types/node": "^20.10.6",
+		"prettier": "^3.1.1",
+		"prettier-plugin-organize-imports": "^3.2.4",
+		"typescript": "^5.3.3"
+	},
+	"dependencies": {
+		"date-fns": "^3.0.6",
+		"fast-xml-parser": "^4.3.2"
+	}
 }

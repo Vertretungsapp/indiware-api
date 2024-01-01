@@ -1,3 +1,3 @@
 export interface IndiwareParser<T> {
-  parse(xml: any): T
+	parse(xml: any): T;
 }
