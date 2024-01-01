@@ -51,18 +51,20 @@ export class SubstitutionPlanParser implements IndiwareParser<SubstitutionPlan> 
 			for (const lesson of schoolclass.plannedLessons) {
 				if (!lesson.teacher.value || lesson.teacher.value == '') continue;
 
-				const existingTeacherIndex = teachers.findIndex(
-					(teacher) => teacher.name === lesson.teacher.value,
-				);
+				for (const t of lesson.teacher.value.split(' ')) {
+					const existingTeacherIndex = teachers.findIndex(
+						(teacher) => teacher.name === t,
+					);
 
-				if (existingTeacherIndex !== -1) {
-					teachers[existingTeacherIndex].plannedLessons.push(lesson);
-					continue;
-				} else {
-					teachers.push({
-						name: lesson.teacher.value,
-						plannedLessons: [lesson],
-					});
+					if (existingTeacherIndex !== -1) {
+						teachers[existingTeacherIndex].plannedLessons.push(lesson);
+						continue;
+					} else {
+						teachers.push({
+							name: t,
+							plannedLessons: [lesson],
+						});
+					}
 				}
 			}
 		}

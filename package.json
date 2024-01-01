@@ -1,6 +1,6 @@
 {
 	"name": "indiware-api",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "A fully-typed wrapper for the Indiware API, used by Vertretungsapp",
 	"author": "Vertretungsapp Development",
 	"main": "lib/index.js",

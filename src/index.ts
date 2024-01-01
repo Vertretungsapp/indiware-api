@@ -1,5 +1,4 @@
 import { AxiosRequestConfig } from 'axios';
-import { log } from 'console';
 import { XMLParser } from 'fast-xml-parser';
 import { Credentials, IndiwareAPI } from './api';
 import { IndiwareAPIEndpoints } from './api/routes';
@@ -127,16 +126,5 @@ export default class IndiwareAPIWrapper {
 		return this.options.password;
 	}
 }
-
-const wrapper = new IndiwareAPIWrapper({
-	uri: 'https://stundenplan24.de',
-	schoolnumber: '10000000',
-	username: 'schueler',
-	password: 'schueler',
-});
-
-wrapper.getSubstitutionPlanForDate(new Date('2023-12-18')).then((plan) => {
-	log(plan);
-});
 
 export { Credentials };
