@@ -23,7 +23,7 @@ export class SubstitutionPlanParser implements IndiwareParser<SubstitutionPlan> 
 			schoolClasses,
 			rooms: [],
 			teachers: [],
-			info: xml.VpMobil.ZusatzInfo.ZiZeile as string[],
+			info: xml.VpMobil.ZusatzInfo ? (xml.VpMobil.ZusatzInfo.ZiZeile as string[]) : [],
 		});
 	}
 }
