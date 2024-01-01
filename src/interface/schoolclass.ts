@@ -1,3 +1,4 @@
+import { Course } from './course'
 import { EducationalUnit } from './generic/eduUnit'
 import { Lesson } from './lesson'
 
@@ -7,8 +8,18 @@ import { Lesson } from './lesson'
 export interface SchoolClass extends EducationalUnit {
   /**
    * The timetable of the school class.
-   * The timetable is an array of lessons, which are used to represent the normal timetable.
-   * The timetable can be replaced by a substitution (see plannedLessons field).
+   * It is a merge of all lessons and courses, where all courses get an id of `-1`.
+   * Can be replaced by a substitution (see plannedLessons field).
    */
   timetable: Lesson[]
+
+  /**
+   * Contains all lessons.
+   */
+  lessons: Lesson[]
+
+  /**
+   * Contains all courses.
+   */
+  courses: Course[]
 }

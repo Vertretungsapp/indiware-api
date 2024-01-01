@@ -1,4 +1,7 @@
+import { XMLParser } from 'fast-xml-parser'
 import { SchoolnumberWrongLengthError } from './errors'
+import { readFileSync } from 'fs'
+import { SubstitutionPlanParser } from './parser/substitutionPlan'
 
 type BootstrapOptions = {
   /**
@@ -66,3 +69,9 @@ export default class IndiwareAPI {
     return this.options.password
   }
 }
+
+//// TEST ////
+const xml = readFileSync('./src/parser/example.xml', 'utf-8')
+const obj = new XMLParser().parse(xml)
+const plan = new SubstitutionPlanParser().parse(obj)
+console.log(plan)

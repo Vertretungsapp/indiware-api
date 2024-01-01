@@ -13,10 +13,12 @@ export interface PlannedLesson {
   order: number
   subject: Changeable<string>
 
-  schoolClassId: number
-  roomId: Changeable<number>
-  teacherId: Changeable<number>
+  schoolClass: number
+  room: Changeable<string>
+  teacher: Changeable<string>
 
   startTime: Date
   endTime: Date
+
+  info: string | null
 }
