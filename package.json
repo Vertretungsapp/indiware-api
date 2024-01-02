@@ -1,6 +1,7 @@
 {
 	"name": "indiware-api",
 	"version": "1.0.0",
+	"type": "module",
 	"description": "A fully-typed wrapper for the Indiware API, used by Vertretungsapp",
 	"author": "Vertretungsapp Development",
 	"main": "lib/index.js",
@@ -34,5 +35,9 @@
 		"axios": "^1.6.3",
 		"date-fns": "^3.0.6",
 		"fast-xml-parser": "^4.3.2"
-	}
+	},
+	"files": [
+		"lib",
+		"src"
+	]
 }
