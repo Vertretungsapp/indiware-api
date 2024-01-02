@@ -1,7 +1,7 @@
 import { parse as parseDate } from 'date-fns';
-import { Changeable } from '../interface/generic/changeable';
-import { PlannedLesson } from '../interface/plannedLesson';
-import { IndiwareParser } from './generic/parser';
+import { Changeable } from '../interface/generic/changeable.js';
+import { PlannedLesson } from '../interface/plannedLesson.js';
+import { IndiwareParser } from './generic/parser.js';
 
 export class PlannedLessonParser implements IndiwareParser<PlannedLesson> {
 	parse(xml: any): PlannedLesson {

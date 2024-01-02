@@ -1,10 +1,10 @@
 import { AxiosRequestConfig } from 'axios';
 import { XMLParser } from 'fast-xml-parser';
-import { Credentials, IndiwareAPI } from './api';
-import { IndiwareAPIEndpoints } from './api/routes';
-import { PlanNotFoundError, RequestFailedError } from './errors';
-import { SubstitutionPlan } from './interface/substitutionPlan';
-import { SubstitutionPlanParser } from './parser/substitutionPlan';
+import { Credentials, IndiwareAPI } from './api/index.js';
+import { IndiwareAPIEndpoints } from './api/routes.js';
+import { PlanNotFoundError, RequestFailedError } from './errors/index.js';
+import { SubstitutionPlan } from './interface/substitutionPlan.js';
+import { SubstitutionPlanParser } from './parser/substitutionPlan.js';
 
 /**
  * An array of paths that should always be an array when parsing the XML.

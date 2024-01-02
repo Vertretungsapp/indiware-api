@@ -1,11 +1,12 @@
 import { parse as parseDate } from 'date-fns';
 import { de } from 'date-fns/locale';
-import { Room } from '../interface/room';
-import { SchoolClass } from '../interface/schoolclass';
-import { SubstitutionPlan } from '../interface/substitutionPlan';
-import { Teacher } from '../interface/teacher';
-import { IndiwareParser } from './generic/parser';
-import { SchoolClassParser } from './schoolClass';
+import { PlannedLesson } from '../interface/plannedLesson.js';
+import { Room } from '../interface/room.js';
+import { SchoolClass } from '../interface/schoolclass.js';
+import { SubstitutionPlan } from '../interface/substitutionPlan.js';
+import { Teacher } from '../interface/teacher.js';
+import { IndiwareParser } from './generic/parser.js';
+import { SchoolClassParser } from './schoolClass.js';
 
 export class SubstitutionPlanParser implements IndiwareParser<SubstitutionPlan> {
 	private generateRooms(schoolclasses: SchoolClass[]): Room[] {
@@ -70,7 +71,7 @@ export class SubstitutionPlanParser implements IndiwareParser<SubstitutionPlan> 
 		}
 
 		for (const teacher of teachers) {
-			teacher.plannedLessons.sort((a, b) => {
+			teacher.plannedLessons.sort((a: PlannedLesson, b: PlannedLesson) => {
 				return a.order - b.order;
 			});
 		}
