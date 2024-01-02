@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.3...v1.0.4) (2024-01-02)
+
+
+### 🪲 Bug Fixes
+
+* **npm-ci:** fixed npm registry authentification ([9a543b2](https://github.com/Vertretungsapp/indiware-api/commit/9a543b293e3846bc16ee783cc1962bd966e51260))
+
 ## [1.0.3](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.2...v1.0.3) (2024-01-02)
 
 
