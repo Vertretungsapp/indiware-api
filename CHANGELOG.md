@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.6...v1.0.7) (2024-01-02)
+
+
+### 🪲 Bug Fixes
+
+* **npm-ci:** fixed wrong configuration for _auth in npm release action ([39a738a](https://github.com/Vertretungsapp/indiware-api/commit/39a738abcc8d1902135d38fbee759e8b449fec15))
+
 ## [1.0.6](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.5...v1.0.6) (2024-01-02)
 
 
