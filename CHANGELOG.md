@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.9](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.8...v1.0.9) (2024-01-02)
+
+
+### 🔄 Changes
+
+* changed to esm module ([fa0adaf](https://github.com/Vertretungsapp/indiware-api/commit/fa0adaf701f473017c475950c2b65a80d5d63710))
+
 ## [1.0.8](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.7...v1.0.8) (2024-01-02)
 
 
