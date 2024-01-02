@@ -1,0 +1,30 @@
+{
+	"release-type": "node",
+
+	"draft-pull-request": true,
+	"pull-request-title-pattern": "chore: release ${version}",
+	"pull-request-header": "📦 Release PR",
+	"pull-request-footer": "🤖 This pull request was automatically generated. To publish the version, please merge the pull request.",
+
+	"include-component-in-tag": false,
+
+	"changelog-sections": [
+		{ "type": "feat", "section": "📕 Features" },
+		{ "type": "change", "section": "🔄 Changes" },
+		{ "type": "fix", "section": "🪲 Bug Fixes" },
+		{ "type": "docs", "section": "📝 Documentation" },
+		{ "type": "style", "section": "🎨 Style Changes" },
+		{ "type": "refactor", "section": "🔧 Code Refactoring" },
+		{ "type": "deps", "section": "⚙️ Dependencies" },
+		{ "type": "content", "section": "📖 Content Changes" },
+		{ "type": "chore", "section": "🔧 Other Changes" },
+		{ "type": "test", "section": "🧪 Testing Changes" },
+		{ "type": "ci", "section": "🚀 CI/CD Changes" }
+	],
+
+	"packages": {
+		".": {}
+	},
+
+	"$schema": "https://github.com/googleapis/release-please/raw/main/schemas/config.json"
+}
