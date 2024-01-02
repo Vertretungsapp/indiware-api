@@ -48,9 +48,3 @@ jobs:
               uses: JS-DevTools/npm-publish@v3
               with:
                   token: ${{ secrets.NPM_PUBLISH_KEY }}
-
-            - name: Publish to GitHub
-              uses: JS-DevTools/npm-publish@v3
-              with:
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  registry: 'https://npm.pkg.github.com'
