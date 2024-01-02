@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.4...v1.0.5) (2024-01-02)
+
+
+### 🪲 Bug Fixes
+
+* **npm-ci:** removed no existing npm config in action ([1491108](https://github.com/Vertretungsapp/indiware-api/commit/1491108ce5513a6291dd0dcd533f5639baa51f1c))
+
 ## [1.0.4](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.3...v1.0.4) (2024-01-02)
 
 
