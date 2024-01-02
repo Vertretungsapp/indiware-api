@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.8](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.7...v1.0.8) (2024-01-02)
+
+
+### 🚀 CI/CD Changes
+
+* added github packages for distribution along npm ([59a7d13](https://github.com/Vertretungsapp/indiware-api/commit/59a7d1374890b03f06fb7d5969358ed2552badc2))
+
 ## [1.0.7](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.6...v1.0.7) (2024-01-02)
 
 
