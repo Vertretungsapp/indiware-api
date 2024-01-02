@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.1...v1.0.2) (2024-01-02)
+
+
+### 🪲 Bug Fixes
+
+* **npm-ci:** fixed typo in npm release action ([ac725fd](https://github.com/Vertretungsapp/indiware-api/commit/ac725fde47edd6f4620816167f4fe68300b2684c))
+
 ## [1.0.1](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.0...v1.0.1) (2024-01-02)
 
 
