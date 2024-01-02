@@ -44,7 +44,12 @@ jobs:
               with:
                   node-version: 20
 
+            - name: Config npm
+              run: |
+                  npm config set always-auth true
+                  npm config set _auth ${{secrets.NPM_PUBLISH_KEY}}
+                  npm config set email ${{secrets.NPM_EMAIL}}
+                  npm config set registry https://registry.npmjs.org/
+
             - name: Publish to NPM
               run: npm publish
-              env:
-                  NPM_TOKEN: ${{secrets.NPM_PUBLISH_KEY}}
