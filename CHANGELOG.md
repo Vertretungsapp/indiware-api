@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.11](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.10...v1.0.11) (2024-01-05)
+
+
+### 🪲 Bug Fixes
+
+* added missing path to ALWAYS_ARRAY_PATHS, caused parsing errors ([a9f889c](https://github.com/Vertretungsapp/indiware-api/commit/a9f889cd3278779480c82e85400d65fb129dee23))
+
 ## [1.0.10](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.9...v1.0.10) (2024-01-05)
 
 
