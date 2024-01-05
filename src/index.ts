@@ -8,7 +8,7 @@ import { Lesson } from './interface/lesson.js';
 import { PlannedLesson } from './interface/plannedLesson.js';
 import { Room } from './interface/room.js';
 import { SchoolClass } from './interface/schoolclass.js';
-import { SubstitutionPlan } from './interface/substitutionPlan.js';
+import { ISubstitutionPlan, SubstitutionPlan } from './interface/substitutionPlan.js';
 import { Teacher } from './interface/teacher.js';
 import { CourseParser } from './parser/course.js';
 import { LessonParser } from './parser/lesson.js';
@@ -139,7 +139,17 @@ export default class IndiwareAPIWrapper {
 }
 
 // Export all interfaces
-export { Course, Credentials, Lesson, PlannedLesson, Room, SchoolClass, SubstitutionPlan, Teacher };
+export {
+	Course,
+	Credentials,
+	ISubstitutionPlan,
+	Lesson,
+	PlannedLesson,
+	Room,
+	SchoolClass,
+	SubstitutionPlan,
+	Teacher,
+};
 
 // Export all parsers
 export {
