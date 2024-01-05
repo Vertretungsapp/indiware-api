@@ -39,5 +39,12 @@
 	"files": [
 		"lib",
 		"src"
-	]
+	],
+	"exports": {
+		".": {
+			"import": "./lib/index.js",
+			"require": "./lib/index.js",
+			"types": "./lib/index.d.ts"
+		}
+	}
 }
