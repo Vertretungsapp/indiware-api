@@ -20,6 +20,10 @@ export interface ISubstitutionPlan {
 export class SubstitutionPlan {
 	constructor(private _data: ISubstitutionPlan) {}
 
+	public toJSON(): ISubstitutionPlan {
+		return this._data;
+	}
+
 	public get date(): Date {
 		return this._data.date;
 	}
