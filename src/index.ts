@@ -26,6 +26,7 @@ export const ALWAYS_ARRAY_PATHS = [
 	'VpMobil.Klassen.Kl.KlStunden.KlSt',
 	'VpMobil.Klassen.Kl.Kurse.Ku',
 	'VpMobil.Klassen.Kl.Unterricht.Ue',
+	'VpMobil.Klassen.Kl.Pl.Std',
 ];
 
 type BootstrapOptions = {
