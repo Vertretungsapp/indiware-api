@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.11...v1.1.0) (2024-01-05)
+
+
+### 📕 Features
+
+* added json serialization to substitution plan ([6811c74](https://github.com/Vertretungsapp/indiware-api/commit/6811c744421e2c6363c1164fc463ecd7949e5ae1))
+
+
+### 🪲 Bug Fixes
+
+* added export for ISubstitutionPlan ([f12a77f](https://github.com/Vertretungsapp/indiware-api/commit/f12a77fbd5a6736025674a25f6400025b523f9ac))
+
 ## [1.0.11](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.10...v1.0.11) (2024-01-05)
 
 
