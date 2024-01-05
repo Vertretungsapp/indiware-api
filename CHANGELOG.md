@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.10](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.9...v1.0.10) (2024-01-05)
+
+
+### 🪲 Bug Fixes
+
+* added missing exports to use interfaces etc in other packages ([1ed064d](https://github.com/Vertretungsapp/indiware-api/commit/1ed064ded14886da59c9495e7b5fe65a01dd5324))
+
 ## [1.0.9](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.8...v1.0.9) (2024-01-02)
 
 
