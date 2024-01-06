@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.0...v1.1.1) (2024-01-06)
+
+
+### 🪲 Bug Fixes
+
+* fixed bug where schoolClass name were parsed as numbers ([641dac3](https://github.com/Vertretungsapp/indiware-api/commit/641dac3367c0da8ac48a0924ed64dbcedd37347f))
+
 ## [1.1.0](https://github.com/Vertretungsapp/indiware-api/compare/v1.0.11...v1.1.0) (2024-01-05)
 
 
