@@ -31,14 +31,14 @@ export class SchoolClassParser implements IndiwareParser<SchoolClass> {
 		const plannedLessons: PlannedLesson[] = xml.Pl
 			? xml.Pl.Std.map((plannedLesson: any) =>
 					new PlannedLessonParser().parse({
-						schoolClass: xml.Kurz,
+						schoolClass: `${xml.Kurz}`,
 						...plannedLesson,
 					}),
 				)
 			: [];
 
 		return {
-			name: xml.Kurz,
+			name: `${xml.Kurz}`,
 			timetable,
 			courses,
 			lessons,
