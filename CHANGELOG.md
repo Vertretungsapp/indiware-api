@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.2](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.1...v1.1.2) (2024-01-09)
+
+
+### 🪲 Bug Fixes
+
+* added missing exports for errors for better use ([40e70ed](https://github.com/Vertretungsapp/indiware-api/commit/40e70ed5669c3f612c48c20abb83588e58f43303))
+* rooms not get seperated correctly like teachers ([2c24d14](https://github.com/Vertretungsapp/indiware-api/commit/2c24d14909aee150f836b0c939d481608be64740))
+
+
+### 🔧 Code Refactoring
+
+* refactored rooms & teachers generation ([2c24d14](https://github.com/Vertretungsapp/indiware-api/commit/2c24d14909aee150f836b0c939d481608be64740))
+
+
+### 🔧 Other Changes
+
+* format files ([6fc6288](https://github.com/Vertretungsapp/indiware-api/commit/6fc62880c7e7adcb21ac9a9e73a646f07b2aac28))
+
 ## [1.1.1](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.0...v1.1.1) (2024-01-06)
 
 
