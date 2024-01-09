@@ -2,7 +2,12 @@ import { AxiosRequestConfig } from 'axios';
 import { XMLParser } from 'fast-xml-parser';
 import { Credentials, IndiwareAPI } from './api/index.js';
 import { IndiwareAPIEndpoints } from './api/routes.js';
-import { PlanNotFoundError, RequestFailedError } from './errors/index.js';
+import {
+	PlanNotFoundError,
+	RequestFailedError,
+	SchoolnumberUnallowedCharsError,
+	SchoolnumberWrongLengthError,
+} from './errors/index.js';
 import { Course } from './interface/course.js';
 import { Lesson } from './interface/lesson.js';
 import { PlannedLesson } from './interface/plannedLesson.js';
@@ -158,4 +163,12 @@ export {
 	PlannedLessonParser,
 	SchoolClassParser,
 	SubstitutionPlanParser,
+};
+
+// Export all errors
+export {
+	PlanNotFoundError,
+	RequestFailedError,
+	SchoolnumberUnallowedCharsError,
+	SchoolnumberWrongLengthError,
 };
