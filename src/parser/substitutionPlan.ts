@@ -1,6 +1,5 @@
 import { parse as parseDate } from 'date-fns';
 import { de } from 'date-fns/locale';
-import { PlannedLesson } from '../interface/plannedLesson.js';
 import { Room } from '../interface/room.js';
 import { SchoolClass } from '../interface/schoolclass.js';
 import { SubstitutionPlan } from '../interface/substitutionPlan.js';
@@ -9,84 +8,61 @@ import { IndiwareParser } from './generic/parser.js';
 import { SchoolClassParser } from './schoolClass.js';
 
 export class SubstitutionPlanParser implements IndiwareParser<SubstitutionPlan> {
-	private generateRooms(schoolclasses: SchoolClass[]): Room[] {
+	private generateRoomsAndTeachers(schoolClasses: SchoolClass[]): [Room[], Teacher[]] {
 		const rooms: Room[] = [];
+		const teachers: Teacher[] = [];
 
-		for (const schoolclass of schoolclasses) {
-			for (const lesson of schoolclass.plannedLessons) {
-				if (!lesson.room.value || lesson.room.value == '') continue;
+		for (const schoolClass of schoolClasses) {
+			for (const lesson of schoolClass.plannedLessons) {
+				if (lesson.room.value && lesson.room.value != '') {
+					for (const room of lesson.room.value.split(' ')) {
+						const existingRoomIndex = rooms.findIndex((r) => r.name === room);
 
-				const existingRoomIndex = rooms.findIndex(
-					(room) => room.name === lesson.room.value,
-				);
-
-				if (existingRoomIndex !== -1) {
-					rooms[existingRoomIndex].plannedLessons.push(lesson);
-					continue;
-				} else {
-					rooms.push({
-						name: lesson.room.value,
-						plannedLessons: [lesson],
-					});
+						if (existingRoomIndex !== -1) {
+							rooms[existingRoomIndex].plannedLessons.push(lesson);
+							continue;
+						} else {
+							rooms.push({
+								name: room,
+								plannedLessons: [lesson],
+							});
+						}
+					}
 				}
-			}
-		}
 
-		for (const room of rooms) {
-			room.plannedLessons.sort((a, b) => {
-				return a.order - b.order;
-			});
-		}
+				if (lesson.teacher.value && lesson.teacher.value != '') {
+					for (const teacher of lesson.teacher.value.split(' ')) {
+						const existingTeacherIndex = teachers.findIndex((t) => t.name === teacher);
 
-		rooms.sort((a, b) => {
-			return a.name.localeCompare(b.name);
-		});
-
-		return rooms;
-	}
-
-	private generateTeachers(schoolclasses: SchoolClass[]): Teacher[] {
-		const teachers: Room[] = [];
-
-		for (const schoolclass of schoolclasses) {
-			for (const lesson of schoolclass.plannedLessons) {
-				if (!lesson.teacher.value || lesson.teacher.value == '') continue;
-
-				for (const t of lesson.teacher.value.split(' ')) {
-					const existingTeacherIndex = teachers.findIndex(
-						(teacher) => teacher.name === t,
-					);
-
-					if (existingTeacherIndex !== -1) {
-						teachers[existingTeacherIndex].plannedLessons.push(lesson);
-						continue;
-					} else {
-						teachers.push({
-							name: t,
-							plannedLessons: [lesson],
-						});
+						if (existingTeacherIndex !== -1) {
+							teachers[existingTeacherIndex].plannedLessons.push(lesson);
+							continue;
+						} else {
+							teachers.push({
+								name: teacher,
+								plannedLessons: [lesson],
+							});
+						}
 					}
 				}
 			}
 		}
 
-		for (const teacher of teachers) {
-			teacher.plannedLessons.sort((a: PlannedLesson, b: PlannedLesson) => {
-				return a.order - b.order;
-			});
-		}
-
-		teachers.sort((a, b) => {
-			return a.name.localeCompare(b.name);
+		rooms.sort((a, b) => a.name.localeCompare(b.name));
+		teachers.sort((a, b) => a.name.localeCompare(b.name));
+		teachers.forEach((teacher) => {
+			teacher.plannedLessons.sort((a, b) => a.order - b.order);
 		});
 
-		return teachers;
+		return [rooms, teachers];
 	}
 
 	parse(xml: any): SubstitutionPlan {
 		const schoolClasses = xml.VpMobil.Klassen.Kl.map((schoolClass: any) => {
 			return new SchoolClassParser().parse(schoolClass);
 		});
+
+		const [rooms, teachers] = this.generateRoomsAndTeachers(schoolClasses);
 
 		return new SubstitutionPlan({
 			date: parseDate(xml.VpMobil.Kopf.DatumPlan, 'EEEE, dd. MMMM y', new Date(), {
@@ -99,9 +75,9 @@ export class SubstitutionPlanParser implements IndiwareParser<SubstitutionPlan> 
 				return parseDate(holiday.toString(), 'yyMMdd', new Date());
 			}),
 			schoolClasses,
-			rooms: this.generateRooms(schoolClasses),
-			teachers: this.generateTeachers(schoolClasses),
 			info: xml.VpMobil.ZusatzInfo ? (xml.VpMobil.ZusatzInfo.ZiZeile as string[]) : [],
+			rooms,
+			teachers,
 		});
 	}
 }
