@@ -15,18 +15,31 @@ export class SubstitutionPlanParser implements IndiwareParser<SubstitutionPlan> 
 		for (const schoolClass of schoolClasses) {
 			for (const lesson of schoolClass.plannedLessons) {
 				if (lesson.room.value && lesson.room.value != '') {
-					for (const room of lesson.room.value.split(' ')) {
-						const existingRoomIndex = rooms.findIndex((r) => r.name === room);
+					// TODO: Find a better way to handle multiple rooms in one lesson
+					// Since this breaks rooms like "TH 1" but also fixes "S2.14 S2.15"
 
-						if (existingRoomIndex !== -1) {
-							rooms[existingRoomIndex].plannedLessons.push(lesson);
-							continue;
-						} else {
-							rooms.push({
-								name: room,
-								plannedLessons: [lesson],
-							});
-						}
+					// for (const room of lesson.room.value.split(' ')) {
+					// 	const existingRoomIndex = rooms.findIndex((r) => r.name === room);
+					// 	if (existingRoomIndex !== -1) {
+					// 		rooms[existingRoomIndex].plannedLessons.push(lesson);
+					// 		continue;
+					// 	} else {
+					// 		rooms.push({
+					// 			name: room,
+					// 			plannedLessons: [lesson],
+					// 		});
+					// 	}
+					// }
+
+					const existingRoomIndex = rooms.findIndex((r) => r.name === lesson.room.value);
+					if (existingRoomIndex !== -1) {
+						rooms[existingRoomIndex].plannedLessons.push(lesson);
+						continue;
+					} else {
+						rooms.push({
+							name: lesson.room.value,
+							plannedLessons: [lesson],
+						});
 					}
 				}
 
