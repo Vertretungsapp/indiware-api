@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.3...v1.1.4) (2024-01-13)
+
+
+### 🪲 Bug Fixes
+
+* room and teacher generation now works fine ([21bf922](https://github.com/Vertretungsapp/indiware-api/commit/21bf922806fc03407a5a8d611e47b80c41cd7371))
+
 ## [1.1.3](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.2...v1.1.3) (2024-01-09)
 
 
