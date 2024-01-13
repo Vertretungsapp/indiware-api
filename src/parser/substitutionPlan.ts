@@ -34,7 +34,6 @@ export class SubstitutionPlanParser implements IndiwareParser<SubstitutionPlan> 
 					const existingRoomIndex = rooms.findIndex((r) => r.name === lesson.room.value);
 					if (existingRoomIndex !== -1) {
 						rooms[existingRoomIndex].plannedLessons.push(lesson);
-						continue;
 					} else {
 						rooms.push({
 							name: lesson.room.value,
@@ -49,7 +48,6 @@ export class SubstitutionPlanParser implements IndiwareParser<SubstitutionPlan> 
 
 						if (existingTeacherIndex !== -1) {
 							teachers[existingTeacherIndex].plannedLessons.push(lesson);
-							continue;
 						} else {
 							teachers.push({
 								name: teacher,
