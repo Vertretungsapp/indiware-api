@@ -16,7 +16,7 @@ export class LessonParser implements IndiwareParser<Lesson> {
 			name: getName(xml.UeNr['@_UeFa'], xml.UeNr['@_UeGr']),
 			subject: xml.UeNr['@_UeFa'],
 			group: xml.UeNr['@_UeGr'] || null,
-			teacher: xml.UeNr['@_LeNr'],
+			teacher: xml.UeNr['@_UeLe'] || null,
 		};
 	}
 }

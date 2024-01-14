@@ -7,5 +7,5 @@ export interface Lesson {
 	name: string;
 	subject: string;
 	group: string | null;
-	teacher: number;
+	teacher: string | null;
 }
