@@ -4,5 +4,5 @@
  */
 export interface Course {
 	subject: string;
-	teacher: number;
+	teacher: string | null;
 }

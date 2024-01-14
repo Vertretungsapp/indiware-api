@@ -5,7 +5,7 @@ export class CourseParser implements IndiwareParser<Course> {
 	parse(xml: any): Course {
 		return {
 			subject: xml.KKz['#text'],
-			teacher: xml.KKz['@_KLe'],
+			teacher: xml.KKz['@_KLe'] || null,
 		};
 	}
 }
