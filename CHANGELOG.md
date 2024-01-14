@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.5](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.4...v1.1.5) (2024-01-14)
+
+
+### 🪲 Bug Fixes
+
+* lessons were also filled with courses like timetable ([022e556](https://github.com/Vertretungsapp/indiware-api/commit/022e55630abb3b64c8c3fa06a32720a72965791d))
+
 ## [1.1.4](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.3...v1.1.4) (2024-01-13)
 
 
