@@ -17,8 +17,9 @@ export class SchoolClassParser implements IndiwareParser<SchoolClass> {
 			? xml.Unterricht.Ue.map((lesson: any) => new LessonParser().parse(lesson))
 			: [];
 
-		const timetable: Lesson[] = lessons;
+		const timetable: Lesson[] = [];
 		timetable.push(
+			...lessons,
 			...courses.map((course: Course) => {
 				return {
 					id: -1,
