@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.6](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.5...v1.1.6) (2024-01-14)
+
+
+### 🪲 Bug Fixes
+
+* teacher were wrongly parsed for lesson ([dc562a4](https://github.com/Vertretungsapp/indiware-api/commit/dc562a4c01e3abc21e89fbcd0d17a4f0e804972f))
+
+
+### 🔧 Other Changes
+
+* addition to dc562a4c01e3abc21e89fbcd0d17a4f0e804972f ([004042a](https://github.com/Vertretungsapp/indiware-api/commit/004042afd580bbb947278f865dd93d9146b72d56))
+
 ## [1.1.5](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.4...v1.1.5) (2024-01-14)
 
 
