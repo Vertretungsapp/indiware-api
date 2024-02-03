@@ -1,6 +1,6 @@
-import { parse as parseDate } from 'date-fns';
 import { Changeable } from '../interface/generic/changeable.js';
 import { PlannedLesson } from '../interface/plannedLesson.js';
+import { parseLocalizedDate } from './generic/date.js';
 import { IndiwareParser } from './generic/parser.js';
 
 export class PlannedLessonParser implements IndiwareParser<PlannedLesson> {
@@ -22,8 +22,8 @@ export class PlannedLessonParser implements IndiwareParser<PlannedLesson> {
 		return {
 			id: xml.Nr,
 			order: xml.St,
-			startTime: parseDate(xml.Beginn, 'HH:mm', new Date()),
-			endTime: parseDate(xml.Ende, 'HH:mm', new Date()),
+			startTime: parseLocalizedDate(xml.Beginn, 'HH:mm'),
+			endTime: parseLocalizedDate(xml.Ende, 'HH:mm'),
 			subject: parseChangeable(xml.Fa),
 			teacher: parseChangeable(xml.Le),
 			room: parseChangeable(xml.Ra),

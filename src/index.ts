@@ -1,24 +1,9 @@
 import { AxiosRequestConfig } from 'axios';
 import { XMLParser } from 'fast-xml-parser';
-import { Credentials, IndiwareAPI } from './api/index.js';
+import { IndiwareAPI } from './api/index.js';
 import { IndiwareAPIEndpoints } from './api/routes.js';
-import {
-	PlanNotFoundError,
-	RequestFailedError,
-	SchoolnumberUnallowedCharsError,
-	SchoolnumberWrongLengthError,
-} from './errors/index.js';
-import { Course } from './interface/course.js';
-import { Lesson } from './interface/lesson.js';
-import { PlannedLesson } from './interface/plannedLesson.js';
-import { Room } from './interface/room.js';
-import { SchoolClass } from './interface/schoolclass.js';
-import { ISubstitutionPlan, SubstitutionPlan } from './interface/substitutionPlan.js';
-import { Teacher } from './interface/teacher.js';
-import { CourseParser } from './parser/course.js';
-import { LessonParser } from './parser/lesson.js';
-import { PlannedLessonParser } from './parser/plannedLesson.js';
-import { SchoolClassParser } from './parser/schoolClass.js';
+import { PlanNotFoundError, RequestFailedError } from './errors/index.js';
+import { SubstitutionPlan } from './interface/substitutionPlan.js';
 import { SubstitutionPlanParser } from './parser/substitutionPlan.js';
 
 /**
@@ -143,32 +128,8 @@ export default class IndiwareAPIWrapper {
 	}
 }
 
-// Export all interfaces
-export {
-	Course,
-	Credentials,
-	ISubstitutionPlan,
-	Lesson,
-	PlannedLesson,
-	Room,
-	SchoolClass,
-	SubstitutionPlan,
-	Teacher,
-};
-
-// Export all parsers
-export {
-	CourseParser,
-	LessonParser,
-	PlannedLessonParser,
-	SchoolClassParser,
-	SubstitutionPlanParser,
-};
-
-// Export all errors
-export {
-	PlanNotFoundError,
-	RequestFailedError,
-	SchoolnumberUnallowedCharsError,
-	SchoolnumberWrongLengthError,
-};
+export * from './api';
+export * from './errors';
+export * from './interface';
+export * from './parser';
+export { BootstrapOptions };

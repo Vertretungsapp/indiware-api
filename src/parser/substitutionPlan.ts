@@ -1,9 +1,8 @@
-import { parse as parseDate } from 'date-fns';
-import { de } from 'date-fns/locale';
 import { Room } from '../interface/room.js';
 import { SchoolClass } from '../interface/schoolclass.js';
 import { SubstitutionPlan } from '../interface/substitutionPlan.js';
 import { Teacher } from '../interface/teacher.js';
+import { parseLocalizedDate } from './generic/date.js';
 import { IndiwareParser } from './generic/parser.js';
 import { SchoolClassParser } from './schoolClass.js';
 
@@ -76,14 +75,12 @@ export class SubstitutionPlanParser implements IndiwareParser<SubstitutionPlan> 
 		const [rooms, teachers] = this.generateRoomsAndTeachers(schoolClasses);
 
 		return new SubstitutionPlan({
-			date: parseDate(xml.VpMobil.Kopf.DatumPlan, 'EEEE, dd. MMMM y', new Date(), {
-				locale: de,
-			}),
-			lastUpdated: parseDate(xml.VpMobil.Kopf.zeitstempel, 'dd.MM.y, HH:mm', new Date()),
+			date: parseLocalizedDate(xml.VpMobil.Kopf.DatumPlan, 'EEEE, dd. MMMM y'),
+			lastUpdated: parseLocalizedDate(xml.VpMobil.Kopf.zeitstempel, 'dd.MM.y, HH:mm'),
 			daysPerWeek: +xml.VpMobil.Kopf.tageprowoche,
 			week: +xml.VpMobil.Kopf.woche,
 			holidays: xml.VpMobil.FreieTage.ft.map((holiday: any) => {
-				return parseDate(holiday.toString(), 'yyMMdd', new Date());
+				return parseLocalizedDate(holiday.toString(), 'yyMMdd');
 			}),
 			schoolClasses,
 			info: xml.VpMobil.ZusatzInfo ? (xml.VpMobil.ZusatzInfo.ZiZeile as string[]) : [],

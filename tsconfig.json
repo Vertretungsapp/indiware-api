@@ -1,15 +1,25 @@
 {
 	"compilerOptions": {
-		"incremental": true /* Enable incremental compilation */,
-		"target": "ES5" /* Specify ECMAScript target version: */,
-		"module": "NodeNext" /* 'none', 'commonjs', 'amd', 'system', etc */,
-		"declaration": true /* Concatenate & emit output to single file.*/,
-		"outDir": "lib" /* Redirect output to the directory. */,
-		"esModuleInterop": true /* Enables intero between CommonJS and ES */,
-		"skipLibCheck": true /* Skip type checking of declaration files. */,
-		"forceConsistentCasingInFileNames": true /* Disallow inconsistently */,
-		"strict": true /* Enable all strict type-checking options. */
+		"outDir": "lib",
+		"target": "es6",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"lib": ["es2015", "dom"],
+		"sourceMap": true,
+		"strict": true,
+		"strictFunctionTypes": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"alwaysStrict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"skipLibCheck": true,
+		"declaration": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true
 	},
 	"include": ["src"],
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules", "lib", "**/*.test.ts"]
 }
