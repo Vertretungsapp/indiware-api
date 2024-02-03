@@ -17,6 +17,14 @@ class RequestFailedError extends Error {
 	) {
 		super(`Request failed with status ${status} (${statusText})`);
 	}
+
+	getStatus(): number {
+		return this.status;
+	}
+
+	getStatusText(): string {
+		return this.statusText;
+	}
 }
 
 class PlanNotFoundError extends Error {
