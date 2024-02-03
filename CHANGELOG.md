@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.7](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.6...v1.1.7) (2024-02-03)
+
+
+### 🪲 Bug Fixes
+
+* dates now getting parsed based on timezone [#22](https://github.com/Vertretungsapp/indiware-api/issues/22) ([6b00f31](https://github.com/Vertretungsapp/indiware-api/commit/6b00f311cfcb1508a8eaf6f1d9901e72052a6b7b))
+
+
+### 🔧 Code Refactoring
+
+* added babel as bundler for better builds ([6b00f31](https://github.com/Vertretungsapp/indiware-api/commit/6b00f311cfcb1508a8eaf6f1d9901e72052a6b7b))
+* added getters for status and statusText ([a242c10](https://github.com/Vertretungsapp/indiware-api/commit/a242c10f05d79e196de13b111ee91aa20efdaa85))
+
+
+### ⚙️ Dependencies
+
+* migrated from date-fns to luxon ([6b00f31](https://github.com/Vertretungsapp/indiware-api/commit/6b00f311cfcb1508a8eaf6f1d9901e72052a6b7b))
+
 ## [1.1.6](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.5...v1.1.6) (2024-01-14)
 
 
