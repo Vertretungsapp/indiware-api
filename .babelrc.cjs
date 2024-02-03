@@ -29,8 +29,6 @@ const bundleConfig = {
 module.exports = {
 	env: {
 		esmUnbundled: sharedConfig,
-		esmBundled: bundleConfig,
-		umdBundled: bundleConfig,
 		cjs: {
 			ignore: sharedIgnoredFiles,
 			presets: [
