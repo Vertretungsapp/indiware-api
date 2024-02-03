@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.8](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.7...v1.1.8) (2024-02-03)
+
+
+### 🪲 Bug Fixes
+
+* made package module again ([c6d6a47](https://github.com/Vertretungsapp/indiware-api/commit/c6d6a47164e618254dbcabb216ab9c625843086d))
+
 ## [1.1.7](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.6...v1.1.7) (2024-02-03)
 
 
