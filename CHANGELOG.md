@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.9](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.8...v1.1.9) (2024-02-10)
+
+
+### 🪲 Bug Fixes
+
+* further fixes belonging the import issues ([dfbf3c6](https://github.com/Vertretungsapp/indiware-api/commit/dfbf3c6039018afd042564eda9f039f3156656b4))
+* restructurized imports due to importing issues in other projects ([68e6369](https://github.com/Vertretungsapp/indiware-api/commit/68e6369768b75f0047209af87a9a0a6d7090d788))
+
 ## [1.1.8](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.7...v1.1.8) (2024-02-03)
 
 
