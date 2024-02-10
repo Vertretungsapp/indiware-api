@@ -1,10 +1,10 @@
-import { Room } from '../interface/room';
-import { SchoolClass } from '../interface/schoolclass';
-import { SubstitutionPlan } from '../interface/substitutionPlan';
-import { Teacher } from '../interface/teacher';
-import { parseLocalizedDate } from './generic/date';
-import { IndiwareParser } from './generic/parser';
-import { SchoolClassParser } from './schoolClass';
+import { Room } from '../interface/room.js';
+import { SchoolClass } from '../interface/schoolclass.js';
+import { SubstitutionPlan } from '../interface/substitutionPlan.js';
+import { Teacher } from '../interface/teacher.js';
+import { parseLocalizedDate } from './generic/date.js';
+import { IndiwareParser } from './generic/parser.js';
+import { SchoolClassParser } from './schoolClass.js';
 
 export class SubstitutionPlanParser implements IndiwareParser<SubstitutionPlan> {
 	private generateRoomsAndTeachers(schoolClasses: SchoolClass[]): [Room[], Teacher[]] {

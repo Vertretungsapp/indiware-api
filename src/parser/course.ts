@@ -1,5 +1,5 @@
-import { Course } from '../interface/course';
-import { IndiwareParser } from './generic/parser';
+import { Course } from '../interface/course.js';
+import { IndiwareParser } from './generic/parser.js';
 
 export class CourseParser implements IndiwareParser<Course> {
 	parse(xml: any): Course {

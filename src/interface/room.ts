@@ -1,4 +1,4 @@
-import { EducationalUnit } from './generic/eduUnit';
+import { EducationalUnit } from './generic/eduUnit.js';
 
 /**
  * A room represents a room in a school, which is used in the timetable.
