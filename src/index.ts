@@ -128,8 +128,8 @@ export default class IndiwareAPIWrapper {
 	}
 }
 
-export * from './api';
-export * from './errors';
-export * from './interface';
-export * from './parser';
+export * from './api/index.js';
+export * from './errors/index.js';
+export * from './interface/index.js';
+export * from './parser/index.js';
 export { BootstrapOptions };

@@ -55,8 +55,8 @@
 	],
 	"exports": {
 		".": "./lib/index.js",
-		"./parser": "./lib/parser/index.js",
-		"./interface": "./lib/interface/index.js",
-		"./error": "./lib/errors/index.js"
+		"./parser": "./lib/parser",
+		"./interface": "./lib/interface",
+		"./error": "./lib/errors"
 	}
 }
