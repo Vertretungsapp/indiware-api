@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { SchoolnumberUnallowedCharsError, SchoolnumberWrongLengthError } from '../errors/index.js';
+import { SchoolnumberUnallowedCharsError, SchoolnumberWrongLengthError } from '../errors/index';
 
 export interface Credentials {
 	schoolnumber: string;

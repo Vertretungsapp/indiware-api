@@ -1,11 +1,11 @@
-import { Course } from '../interface/course.js';
-import { Lesson } from '../interface/lesson.js';
-import { PlannedLesson } from '../interface/plannedLesson.js';
-import { SchoolClass } from '../interface/schoolclass.js';
-import { CourseParser } from './course.js';
-import { IndiwareParser } from './generic/parser.js';
-import { LessonParser } from './lesson.js';
-import { PlannedLessonParser } from './plannedLesson.js';
+import { Course } from '../interface/course';
+import { Lesson } from '../interface/lesson';
+import { PlannedLesson } from '../interface/plannedLesson';
+import { SchoolClass } from '../interface/schoolclass';
+import { CourseParser } from './course';
+import { IndiwareParser } from './generic/parser';
+import { LessonParser } from './lesson';
+import { PlannedLessonParser } from './plannedLesson';
 
 export class SchoolClassParser implements IndiwareParser<SchoolClass> {
 	parse(xml: any): SchoolClass {

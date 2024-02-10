@@ -1,6 +1,6 @@
-import { Course } from './course.js';
-import { EducationalUnit } from './generic/eduUnit.js';
-import { Lesson } from './lesson.js';
+import { Course } from './course';
+import { EducationalUnit } from './generic/eduUnit';
+import { Lesson } from './lesson';
 
 /**
  * A school class represents a classical class or course in a school.

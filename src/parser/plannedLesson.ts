@@ -1,7 +1,7 @@
-import { Changeable } from '../interface/generic/changeable.js';
-import { PlannedLesson } from '../interface/plannedLesson.js';
-import { parseLocalizedDate } from './generic/date.js';
-import { IndiwareParser } from './generic/parser.js';
+import { Changeable } from '../interface/generic/changeable';
+import { PlannedLesson } from '../interface/plannedLesson';
+import { parseLocalizedDate } from './generic/date';
+import { IndiwareParser } from './generic/parser';
 
 export class PlannedLessonParser implements IndiwareParser<PlannedLesson> {
 	parse(xml: any): PlannedLesson {

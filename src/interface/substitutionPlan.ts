@@ -1,6 +1,6 @@
-import { Room } from './room.js';
-import { SchoolClass } from './schoolclass.js';
-import { Teacher } from './teacher.js';
+import { Room } from './room';
+import { SchoolClass } from './schoolclass';
+import { Teacher } from './teacher';
 
 export interface ISubstitutionPlan {
 	date: Date;

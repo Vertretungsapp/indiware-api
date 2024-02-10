@@ -1,4 +1,4 @@
-import { EducationalUnit } from './generic/eduUnit.js';
+import { EducationalUnit } from './generic/eduUnit';
 
 /**
  * A teacher represents a teacher in a school (obviously -_-).

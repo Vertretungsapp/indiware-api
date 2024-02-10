@@ -1,4 +1,4 @@
-import { Changeable } from './generic/changeable.js';
+import { Changeable } from './generic/changeable';
 
 /**
  * A planned lesson is the actual scheduled lesson in a substitution plan.

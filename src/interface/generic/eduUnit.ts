@@ -1,4 +1,4 @@
-import { PlannedLesson } from '../plannedLesson.js';
+import { PlannedLesson } from '../plannedLesson';
 
 /**
  * An interface for educational unit
