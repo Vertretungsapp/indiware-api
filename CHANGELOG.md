@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.9...v1.2.0) (2024-02-11)
+
+
+### 📕 Features
+
+* added `type` field in every plan ([cd7f900](https://github.com/Vertretungsapp/indiware-api/commit/cd7f900f148b3be97018efe3e179001208c60fb7))
+
+
+### 🪲 Bug Fixes
+
+* added missing export for EducationalUnit ([cd7f900](https://github.com/Vertretungsapp/indiware-api/commit/cd7f900f148b3be97018efe3e179001208c60fb7))
+
 ## [1.1.9](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.8...v1.1.9) (2024-02-10)
 
 
