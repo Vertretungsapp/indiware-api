@@ -1,4 +1,5 @@
 import { Course } from './course';
+import { EducationalUnit } from './generic/eduUnit';
 import { Lesson } from './lesson';
 import { PlannedLesson } from './plannedLesson';
 import { Room } from './room';
@@ -8,6 +9,7 @@ import { Teacher } from './teacher';
 
 export type {
 	Course,
+	EducationalUnit,
 	ISubstitutionPlan,
 	Lesson,
 	PlannedLesson,

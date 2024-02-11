@@ -12,4 +12,10 @@ export interface EducationalUnit {
 	 * The planned lessons are used to represent the substitution plan.
 	 */
 	plannedLessons: PlannedLesson[];
+
+	/**
+	 * The type of the educational unit.
+	 * The type can be "schoolClass", "room", or "teacher".
+	 */
+	type: 'schoolClass' | 'room' | 'teacher';
 }

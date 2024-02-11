@@ -37,6 +37,7 @@ export class SubstitutionPlanParser implements IndiwareParser<SubstitutionPlan> 
 						rooms.push({
 							name: lesson.room.value,
 							plannedLessons: [lesson],
+							type: 'room',
 						});
 					}
 				}
@@ -51,6 +52,7 @@ export class SubstitutionPlanParser implements IndiwareParser<SubstitutionPlan> 
 							teachers.push({
 								name: teacher,
 								plannedLessons: [lesson],
+								type: 'teacher',
 							});
 						}
 					}

@@ -6,6 +6,8 @@ import { Lesson } from './lesson.js';
  * A school class represents a classical class or course in a school.
  */
 export interface SchoolClass extends EducationalUnit {
+	readonly type: 'schoolClass';
+
 	/**
 	 * The timetable of the school class.
 	 * It is a merge of all lessons and courses, where all courses get an id of `-1`.

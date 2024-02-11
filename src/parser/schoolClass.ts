@@ -40,6 +40,7 @@ export class SchoolClassParser implements IndiwareParser<SchoolClass> {
 
 		return {
 			name: `${xml.Kurz}`,
+			type: 'schoolClass',
 			timetable,
 			courses,
 			lessons,
