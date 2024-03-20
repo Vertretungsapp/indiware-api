@@ -20,7 +20,7 @@ export class PlannedLessonParser implements IndiwareParser<PlannedLesson> {
 		}
 
 		return {
-			id: xml.Nr,
+			id: xml.Nr || null,
 			order: xml.St,
 			startTime: parseLocalizedDate(xml.Beginn, 'HH:mm'),
 			endTime: parseLocalizedDate(xml.Ende, 'HH:mm'),

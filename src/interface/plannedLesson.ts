@@ -5,7 +5,7 @@ import { Changeable } from './generic/changeable.js';
  * It can be equal to a normal lesson, but can also be a different lesson, depending on the substitution plan.
  */
 export interface PlannedLesson {
-	id: number;
+	id: number | null; // I don't know why Indiware is doing this, but the id is sometimes null
 	/**
 	 * The order of the planned lesson in the substitution plan.
 	 * @example 1, 2, ...
