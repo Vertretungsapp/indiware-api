@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/Vertretungsapp/indiware-api/compare/v1.2.0...v1.2.1) (2024-03-20)
+
+
+### 🪲 Bug Fixes
+
+* id of plannendLesson can be null, due to the Indiware API ([cdeedac](https://github.com/Vertretungsapp/indiware-api/commit/cdeedac35b4f5ff8183e24cb9a39ae600b2dea16))
+
 ## [1.2.0](https://github.com/Vertretungsapp/indiware-api/compare/v1.1.9...v1.2.0) (2024-02-11)
 
 
