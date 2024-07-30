@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/Vertretungsapp/indiware-api/compare/v1.2.1...v1.2.2) (2024-07-30)
+
+
+### 🪲 Bug Fixes
+
+* rooms with pure numbers were ignored ([f56faa6](https://github.com/Vertretungsapp/indiware-api/commit/f56faa698488672178d454d2943d2ce825abc75d))
+
 ## [1.2.1](https://github.com/Vertretungsapp/indiware-api/compare/v1.2.0...v1.2.1) (2024-03-20)
 
 
