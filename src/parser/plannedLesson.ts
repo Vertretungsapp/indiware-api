@@ -11,12 +11,12 @@ export class PlannedLessonParser implements IndiwareParser<PlannedLesson> {
 			if (typeof input == 'string' || typeof input == 'number') {
 				return {
 					changed: false,
-					value: input.toString() || null,
+					value: input ? `${input}` : null,
 				};
 			} else {
 				return {
 					changed: true,
-					value: input['#text'] || null,
+					value: input['#text'] ? `${input['#text']}` : null,
 				};
 			}
 		}
