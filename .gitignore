@@ -134,3 +134,11 @@ lib/
 
 src/parser/example.xml
 src/parser/example.json
+/.idea/.gitignore
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/git_toolbox_blame.xml
+/.idea/indiware-api.iml
+/.idea/material_theme_project_new.xml
+/.idea/modules.xml
+/.idea/codeStyles/Project.xml
+/.idea/vcs.xml
