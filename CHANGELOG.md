@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.3](https://github.com/Vertretungsapp/indiware-api/compare/v1.2.2...v1.2.3) (2024-07-30)
+
+
+### 🪲 Bug Fixes
+
+* force room names to string ([13228f3](https://github.com/Vertretungsapp/indiware-api/commit/13228f3f4ee62a86ad3ee77929e5b8f5c9cdf076))
+
 ## [1.2.2](https://github.com/Vertretungsapp/indiware-api/compare/v1.2.1...v1.2.2) (2024-07-30)
 
 
