@@ -5,7 +5,7 @@ import { IndiwareAPIEndpoints } from './api/routes.js';
 import { PlanNotFoundError, RequestFailedError } from './errors/index.js';
 import { SubstitutionPlan } from './interface/substitutionPlan.js';
 import { SubstitutionPlanParser } from './parser/substitutionPlan.js';
-import { parseAvailableDates } from './parser/infoFile';
+import { parseAvailableDates } from './parser/infoFile.js';
 
 /**
  * An array of paths that should always be an array when parsing the XML.
