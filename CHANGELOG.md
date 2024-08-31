@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/Vertretungsapp/indiware-api/compare/v2.0.0...v2.0.1) (2024-08-31)
+
+
+### 🪲 Bug Fixes
+
+* infoFile parser was not importable in js ([be763fa](https://github.com/Vertretungsapp/indiware-api/commit/be763faa6d76959f67237e341dc964376e663019))
+
 ## [2.0.0](https://github.com/Vertretungsapp/indiware-api/compare/v1.2.3...v2.0.0) (2024-08-31)
 
 
