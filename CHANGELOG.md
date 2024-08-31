@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.0](https://github.com/Vertretungsapp/indiware-api/compare/v1.2.3...v2.0.0) (2024-08-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* deprecated old get functions
+
+### 📕 Features
+
+* added fetchAvailableDates() ([309ff70](https://github.com/Vertretungsapp/indiware-api/commit/309ff709804a2b4f8f75bf255abc023d0688e3b3))
+* added fetchSubstitutionPlan() and fetchSubstitutionPlans() ([309ff70](https://github.com/Vertretungsapp/indiware-api/commit/309ff709804a2b4f8f75bf255abc023d0688e3b3))
+
+
+### 🔄 Changes
+
+* deprecated old get functions ([309ff70](https://github.com/Vertretungsapp/indiware-api/commit/309ff709804a2b4f8f75bf255abc023d0688e3b3))
+
+
+### ⚙️ Dependencies
+
+* updated all dependencies ([5293bee](https://github.com/Vertretungsapp/indiware-api/commit/5293beebd6a1cf4946d817fb8200c0174d6c51bf))
+
 ## [1.2.3](https://github.com/Vertretungsapp/indiware-api/compare/v1.2.2...v1.2.3) (2024-07-30)
 
 
