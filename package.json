@@ -1,6 +1,6 @@
 {
 	"name": "indiware-api",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "A fully-typed wrapper for the Indiware API, used by Vertretungsapp",
 	"author": "Vertretungsapp Development",
 	"type": "module",
