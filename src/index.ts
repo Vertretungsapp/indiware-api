@@ -5,6 +5,7 @@ import { IndiwareAPIEndpoints } from './api/routes.js';
 import { PlanNotFoundError, RequestFailedError } from './errors/index.js';
 import { SubstitutionPlan } from './interface/substitutionPlan.js';
 import { SubstitutionPlanParser } from './parser/substitutionPlan.js';
+import { parseAvailableDates } from './parser/infoFile';
 
 /**
  * An array of paths that should always be an array when parsing the XML.
@@ -78,6 +79,23 @@ export default class IndiwareAPIWrapper {
 		);
 	}
 
+	/**
+	 * Tests the connection to the Indiware API.
+	 * @returns {Promise<boolean>} Whether the connection was successful.
+	 * @throws {RequestFailedError} If the request failed.
+	 */
+	async testConnection(): Promise<boolean> {
+		const res = await this.api.makeRequest(IndiwareAPIEndpoints.GET_INFO_TXT);
+		switch (res.status) {
+			case 200:
+				return true;
+			case 401:
+				return false;
+			default:
+				throw new RequestFailedError(res.status, res.statusText);
+		}
+	}
+
 	private parseXML(xml: string) {
 		return new XMLParser({
 			ignoreAttributes: false,
@@ -98,14 +116,57 @@ export default class IndiwareAPIWrapper {
 		return new SubstitutionPlanParser().parse(this.parseXML(res.data));
 	}
 
+	/**
+	 * @deprecated Use {@link IndiwareAPIWrapper#fetchSubstitutionPlan} instead.
+	 */
 	async getNewestSubstitutionPlan(): Promise<SubstitutionPlan> {
 		return this.requestSubstitutionPlan(IndiwareAPIEndpoints.GET_NEXT_SUBSTITUTION_PLAN);
 	}
 
+	/**
+	 * @deprecated Use {@link IndiwareAPIWrapper#fetchSubstitutionPlan} instead.
+	 */
 	async getSubstitutionPlanForDate(date: Date): Promise<SubstitutionPlan> {
 		return this.requestSubstitutionPlan(IndiwareAPIEndpoints.GET_SUBSTITUTION_PLAN(date));
 	}
 
+	/**
+	 * Fetches a substitution plan from the Indiware API.
+	 * @param {Date | undefined} date The date to get the substitution plan for. If not provided, the current substitution plan will be fetched.
+	 * @returns {Promise<SubstitutionPlan>} The fetched substitution plan.
+	 * @throws {PlanNotFoundError} If the plan could not be found.
+	 * @throws {RequestFailedError} If the request failed.
+	 */
+	async fetchSubstitutionPlan(date?: Date): Promise<SubstitutionPlan> {
+		return this.requestSubstitutionPlan(date ? IndiwareAPIEndpoints.GET_SUBSTITUTION_PLAN(date) : IndiwareAPIEndpoints.GET_NEXT_SUBSTITUTION_PLAN);
+	}
+
+	/**
+	 * Fetches multiple substitution plans from the Indiware API.
+	 * @param {Date[]} dates The dates to get the substitution plans for.
+	 * @returns {Promise<SubstitutionPlan[]>} The fetched substitution plans.
+	 * @throws {PlanNotFoundError} If a plan could not be found.
+	 * @throws {RequestFailedError} If the request failed.
+	 */
+	async fetchSubstitutionPlans(dates: Date[]): Promise<SubstitutionPlan[]> {
+		const plans: SubstitutionPlan[] = [];
+		for (const date of dates) {
+			plans.push(await this.fetchSubstitutionPlan(date));
+		}
+		return plans;
+	}
+
+	/**
+	 * Fetches the available dates for the future substitution plans from the Indiware API.
+	 * @returns {Promise<Date[]>} The available dates for the future substitution plans.
+	 * @throws {RequestFailedError} If the request failed.
+	 */
+	async fetchAvailableDates(): Promise<Date[]> {
+		const res = await this.api.makeRequest(IndiwareAPIEndpoints.GET_INFO_TXT);
+		if (res.status !== 200) throw new RequestFailedError(res.status, res.statusText);
+		return parseAvailableDates(res.data);
+	}
+	
 	/**
 	 * @returns {string} The URI where the Indiware API is located.
 	 */
