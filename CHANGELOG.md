@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/Vertretungsapp/indiware-api/compare/v2.0.1...v2.0.2) (2024-08-31)
+
+
+### 🪲 Bug Fixes
+
+* added more missing .js endings in imports ([2aa0f70](https://github.com/Vertretungsapp/indiware-api/commit/2aa0f7071dc83f9826ccb1b24bad42be1960049e))
+
 ## [2.0.1](https://github.com/Vertretungsapp/indiware-api/compare/v2.0.0...v2.0.1) (2024-08-31)
 
 
