@@ -1,5 +1,5 @@
 import { parseIniFromString } from 'cool-ini-parser';
-import { parseLocalizedDate } from './generic/date';
+import { parseLocalizedDate } from './generic/date.js';
 	
 export function parseAvailableDates(file: any): Date[] {
 	const parsed = parseIniFromString(file);
